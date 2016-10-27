@@ -231,6 +231,7 @@ export class Component extends React.Component {
   getLocals() {
     const options = this.props.options
     const value = this.state.value
+    const isSubmitted = this.props.isSubmitted
     return {
       typeInfo: this.typeInfo,
       path: this.props.ctx.path,
@@ -243,7 +244,8 @@ export class Component extends React.Component {
       value,
       disabled: options.disabled,
       help: options.help,
-      context: this.props.ctx.context
+      context: this.props.ctx.context,
+      isSubmitted
     }
   }
 
@@ -307,6 +309,7 @@ export class Textbox extends Component {
     locals.attrs = this.getAttrs()
     locals.attrs.placeholder = this.getPlaceholder()
     locals.type = this.props.options.type || 'text'
+    locals.isSubmitted = this.props.isSubmitted
     return locals
   }
 
@@ -326,6 +329,7 @@ export class Checkbox extends Component {
     locals.attrs = this.getAttrs()
     // checkboxes must always have a label
     locals.label = locals.label || this.getDefaultLabel()
+    locals.isSubmitted = this.props.isSubmitted
     return locals
   }
 
@@ -388,6 +392,7 @@ export class Select extends Component {
     locals.attrs = this.getAttrs()
     locals.options = this.getOptions()
     locals.isMultiple = this.isMultiple()
+    locals.isSubmitted = this.props.isSubmitted
     return locals
   }
 
@@ -415,6 +420,7 @@ export class Radio extends Component {
     const locals = super.getLocals()
     locals.attrs = this.getAttrs()
     locals.options = this.getOptions()
+    locals.isSubmitted = this.props.isSubmitted
     return locals
   }
 
@@ -454,6 +460,7 @@ export class Datetime extends Component {
     const locals = super.getLocals()
     locals.attrs = this.getAttrs()
     locals.order = this.getOrder()
+    locals.isSubmitted = this.props.isSubmitted
     return locals
   }
 
@@ -576,6 +583,7 @@ export class Struct extends Component {
     locals.order = this.getOrder()
     locals.inputs = this.getInputs()
     locals.className = options.className
+    locals.isSubmitted = this.props.isSubmitted
     return locals
   }
 
@@ -774,6 +782,7 @@ export class List extends Component {
     }
     locals.items = this.getItems()
     locals.className = options.className
+    locals.isSubmitted = this.props.isSubmitted
     return locals
   }
 
@@ -840,6 +849,7 @@ export class Form extends React.Component {
       options,
       value: value,
       onChange: this.props.onChange || noop,
+      isSubmitted : this.props.isSubmitted || false,
       ctx: this.props.ctx || {
         context: this.props.context,
         uidGenerator,
