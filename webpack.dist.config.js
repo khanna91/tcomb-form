@@ -22,8 +22,7 @@ module.exports = [
           test: /\.js?$/,
           loader: 'babel',
           query: {
-            stage: 0,
-            loose: true
+            presets: ['es2015', 'stage-2']
           },
           exclude: [/node_modules/]
         }
@@ -51,8 +50,7 @@ module.exports = [
           test: /\.js?$/,
           loader: 'babel',
           query: {
-            stage: 0,
-            loose: true
+            presets: ['es2015', 'stage-2']
           },
           exclude: [/node_modules/]
         }
