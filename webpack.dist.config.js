@@ -22,7 +22,7 @@ module.exports = [
           test: /\.js?$/,
           loader: 'babel-loader',
           query: {
-            presets: ['es2015', 'stage-0']
+            presets: ['es2015', 'stage-2']
           },
           exclude: /(node_modules|bower_components)/
         }
@@ -50,7 +50,7 @@ module.exports = [
           test: /\.js?$/,
           loader: 'babel-loader',
           query: {
-            presets: ['es2015', 'stage-0']
+            presets: ['es2015', 'stage-2']
           },
           exclude: /(node_modules|bower_components)/
         }
