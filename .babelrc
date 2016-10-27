@@ -1,4 +1,3 @@
 {
-  stage: 0,
-  loose: true
+  presets: ['stage-0']
 }

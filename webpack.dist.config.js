@@ -20,12 +20,11 @@ module.exports = [
       loaders: [
         {
           test: /\.js?$/,
-          loader: 'babel',
+          loader: 'babel-loader',
           query: {
-            stage: 0,
-            loose: true
+            presets: ['stage-0']
           },
-          exclude: [/node_modules/]
+          exclude: /(node_modules|bower_components)/
         }
       ]
     },
@@ -49,12 +48,11 @@ module.exports = [
       loaders: [
         {
           test: /\.js?$/,
-          loader: 'babel',
+          loader: 'babel-loader',
           query: {
-            stage: 0,
-            loose: true
+            presets: ['stage-0']
           },
-          exclude: [/node_modules/]
+          exclude: /(node_modules|bower_components)/
         }
       ]
     },

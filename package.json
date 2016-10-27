@@ -28,15 +28,16 @@
   },
   "homepage": "https://github.com/gcanti/tcomb-form",
   "dependencies": {
+    "babel-preset-stage-0": "^6.16.0",
     "react": "^0.14.0",
     "tcomb-form-templates-bootstrap": "^0.1.0",
     "tcomb-validation": "^2.2.0"
   },
   "devDependencies": {
-    "babel": "^5.8.34",
-    "babel-core": "^5.8.34",
+    "babel": "^6.0.0",
+    "babel-core": "^6.0.0",
     "babel-eslint": "^4.1.5",
-    "babel-loader": "^5.4.0",
+    "babel-loader": "^6.0.0",
     "eslint": "^1.10.1",
     "eslint-config-airbnb": "^1.0.0",
     "eslint-plugin-react": "^3.10.0",
